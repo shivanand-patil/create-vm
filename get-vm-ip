@@ -30,10 +30,10 @@ HOSTNAME=$1
 if [[ -z $HOSTNAME ]]; then
     echo "ERROR: Hostname is required"
     usage
-    exit 1
+   exit 1
 fi
 
 MAC=$(virsh -q domiflist $HOSTNAME | awk '{ print $5 }')
 # ping -c 4 -b 192.168.1.255
 # arp -e | grep -i $MAC | awk '{ print $1 }'
-sudo arp-scan --interface=br0 192.168.1.0/24  | grep -i $MAC | awk '{ print $1 }'
+sudo arp-scan --interface=virbr0 192.168.122.0/24  | grep -i $MAC | awk '{ print $1 }'
