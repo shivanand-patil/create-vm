@@ -117,11 +117,11 @@ cat > "$VM_IMAGE_DIR/init/user-data" << EOF
 #cloud-config
 
 users:
-  - name: cloudgenius
+  - name: shiv
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     groups: sudo
     shell: /bin/bash
-    homedir: /home/cloudgenius
+    homedir: /home/shiv
     ssh_authorized_keys:
 EOF
 
